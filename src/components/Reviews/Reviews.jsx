@@ -14,17 +14,19 @@ const Reviews = () => {
   }, [movieId]);
 
   if (reviews && reviews.length > 0) {
-    return (<div>
-      {reviews.map(actor => {
-        const { author, content, id } = actor;
-        return (
-          <div key={id}>
-            <p>{author}</p>
-            <p>{content}</p>
-          </div>
-        );
-      })}
-    </div>)();
+    return (
+      <div>
+        {reviews.map(actor => {
+          const { author, content, id } = actor;
+          return (
+            <div key={id}>
+              <p>{author}</p>
+              <p>{content}</p>
+            </div>
+          );
+        })}
+      </div>
+    );
   }
   return <div>We don't have any reviews for this film</div>;
 };
